@@ -1,0 +1,26 @@
+<!--miniprogram/pages/match/match.wxml-->
+<view class="container">
+	<image src="/images/postBig.png" style=" position: absolute; margin-left: -26%; margin-top: -16%; width: 139rpx; height: 163rpx; transform: rotate(-30deg);"></image>
+
+	<view class="intro">
+		<text style="font-weight:bold">  发起活动</text>
+		<text>您发起了一个活动，请核对信息：</text>
+		<text>发起人：<text style="font-family:''">{{postinf.postername}} </text></text>
+		<text>项目：{{postinf.project}}</text>
+		<text>地点：{{postinf.position}}</text>
+		<text>时间：{{postinf.year}}-{{postinf.month}}-{{postinf.day}}-{{postinf.hour}}:{{postinf.minute}}</text>
+    <text>备注：<text style="font-family:''">{{postinf.tips}}</text></text>
+		<text>请认真核对  (✪ω✪) 如果鸽了活动会被大家打差评的哦</text>
+		
+	</view>
+	<view style="height:60rpx"></view>
+	<view class="handin">
+		<view class="handintext" bindtap="post">
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;">我已经确认了\n我要提交</text>
+		</view>
+		<view style="height:30rpx"></view>
+		<view class="handintext" bindtap="cancel">
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;">我还得再想想</text>
+		</view>
+	</view>
+</view>

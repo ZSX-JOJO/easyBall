@@ -1,0 +1,27 @@
+<view class="container">
+	<!-- 简介 -->
+	<image src="/images/chatBig.png" style=" position: absolute; margin-left: -30%; margin-top: -15%; width: 144rpx; height: 140rpx; transform: rotate(-20deg);"></image>
+	<image src="/images/chatbackground.png" style="position :fixed; top:51%;left:31%;width:514.5rpx;height:588rpx"></image>
+	<view class="uploader">
+		<navigator url="./room/room" open-type="navigate" class="uploader-text">
+			<text>进入{{name}}创建的聊天室</text>
+		</navigator>
+	</view>
+  <view style="height:30rpx"></view>
+  <view class="uploader">
+		<navigator url="./room/room" open-type="navigate" class="uploader-text">
+			<text>进入{{name}}创建的聊天室</text>
+		</navigator>
+	</view>
+  <view style="height:100rpx"></view>
+	<view class="guide">
+		<text class="headline">欢迎使用聊天功能</text>
+		<text class="p">您报名或创建的活动都会在这里有一个聊天室</text>
+		<text class="p">在活动结束后的第二天聊天室会自动关闭</text>
+		<text class="p">您可以在聊天室与朋友们畅所欲言</text>
+		<text class="p">但是一定要注意自己的言行举止哦</text>
+    <image src="../../images/tag0.png" style="position:absolute;width:9%;height:4.8%;margin-top:-52rpx;margin-left:-60rpx"></image>
+	</view>
+
+
+</view>

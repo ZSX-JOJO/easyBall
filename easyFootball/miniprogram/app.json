@@ -1,0 +1,62 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/message/message",
+    "pages/chat/chat",
+    "pages/me/me",
+    "pages/match/match",
+    "pages/message/components/carditem/card_item",
+    "components/card/card",
+    "pages/me/details/myposters",
+    "pages/index/post",
+    "pages/me/details/mydetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#FF713D",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/me/me",
+        "text": "left",
+        "iconPath": "/custom-tab-bar/icon/me.png",
+        "selectedIconPath": "/custom-tab-bar/icon/me_c.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "left",
+        "iconPath": "/custom-tab-bar/icon/message.png",
+        "selectedIconPath": "/custom-tab-bar/icon/message_c.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/custom-tab-bar/icon/home_c.png",
+        "selectedIconPath": "/custom-tab-bar/icon/home_c.png",
+        "text": "middle"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "right",
+        "iconPath": "/custom-tab-bar/icon/chat.png",
+        "selectedIconPath": "/custom-tab-bar/icon/chat_c.png"
+      },
+      {
+        "pagePath": "pages/match/match",
+        "text": "right",
+        "iconPath": "/custom-tab-bar/icon/match.png",
+        "selectedIconPath": "/custom-tab-bar/icon/match_c.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

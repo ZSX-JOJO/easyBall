@@ -1,0 +1,92 @@
+<view class="page-container">
+	<view class="container">
+		<view class="userinfo">
+			<image wx:if="{{!hasUserInfo && canIUse||openId==''}}" class="unavatar" open-type="getUserInfo" src="/images/login.png" bindgetuserinfo="getUserInfo"> </image>
+			<button wx:if="{{!hasUserInfo&&canIUse||openId==''}}" bindgetuserinfo="getUserInfo" open-type="getUserInfo">
+				<view class="usermotto">
+					<text class="user-motto">登陆</text>
+				</view>
+			</button>
+
+
+			<view wx:else>
+				<view class="user-info-container">
+					<open-data type="userAvatarUrl" style="position:absolute;border-radius:50%;width:120rpx;margin-top:270rpx;margin-left:60rpx"></open-data>
+					<open-data type="userNickName" lang="zh_CN" style="position:absolute;margin-top:295rpx;margin-left:210rpx"></open-data>
+				</view>
+				<view style="height:30rpx"></view>
+				<view class="basicInf">
+					<image src="/images/tag1.png" style="width:40rpx;height:40rpx"></image>
+					<text style="flex:0 0 90%; font-family:'南构钦雕汉古'"> 学校:{{infshow.school}}</text>
+					<image src="/images/tag1.png" style="width:40rpx;height:40rpx"></image>
+					<text style="flex:0 0 90%; font-family:'南构钦雕汉古'"> 擅长:{{infshow.goodat}}</text>
+					<image src="/images/tag1.png" style="width:40rpx;height:40rpx"></image>
+					<text style="flex:0 0 90%;font-family:'南构钦雕汉古'"> 信誉:{{infshow.grade}}</text>
+				</view>
+				<view style="height:30rpx"></view>
+				<view class="user-bbs-info-container">
+	<view class="user-post-wrap" catchtap="mydetail">
+						<view class="user-post-icon" />
+						<view class="user-post-text-wrap">
+							<text class="user-text">我的资料</text>
+						</view>
+						
+						<!-- <view class="user-list-container">
+        <view class="post-list-num">2</view>
+      </view> -->
+						<view class="user-arrow-wrap">
+							<view class="user-info-arrow" />
+						</view>
+					</view>
+
+					<view class="user-post-wrap" catchtap="myPost">
+						<view class="user-post-icon" />
+						<view class="user-post-text-wrap">
+							<text class="user-text">历史发帖</text>
+						</view>
+						
+						<!-- <view class="user-list-container">
+        <view class="post-list-num">2</view>
+      </view> -->
+						<view class="user-arrow-wrap">
+							<view class="user-info-arrow" />
+						</view>
+					</view>
+					<view class="user-post-wrap" catchtap="studyDetails">
+						<view class="user-post-myad" />
+						<view class="user-post-text-wrap">
+							<text class="user-text">我的报名</text>
+						</view>
+						<view class="user-arrow-wrap">
+							<view class="user-info-arrow" />
+						</view>
+					</view>
+				</view>
+				<view class="user-post-wrap" catchtap="myPost">
+					<view class="user-post-icon" />
+					<view class="user-post-text-wrap">
+						<text class="user-text">我的好友</text>
+					</view>
+					<!-- <view class="user-list-container">
+        <view class="post-list-num">2</view>
+      </view> -->
+					<view class="user-arrow-wrap">
+						<view class="user-info-arrow" />
+					</view>
+				</view>
+					<view class="user-post-wrap" catchtap="myPost">
+					<view class="user-post-icon" />
+					<view class="user-post-text-wrap">
+						<text class="user-text">我的投诉</text>
+					</view>
+					<!-- <view class="user-list-container">
+        <view class="post-list-num">2</view>
+      </view> -->
+					<view class="user-arrow-wrap">
+						<view class="user-info-arrow" />
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

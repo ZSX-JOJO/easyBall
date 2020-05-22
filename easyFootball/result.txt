@@ -1,0 +1,163 @@
+C:\Users\Harry\Desktop\微信小程序\ easyFootball
+├─package-lock.json
+├─project.config.json
+├─README.md
+├─miniprogram
+|      ├─app.js
+|      ├─app.json
+|      ├─app.wxss
+|      ├─project.config.json
+|      ├─README.md
+|      ├─sitemap.json
+|      ├─utils
+|      |   └util.js
+|      ├─pages
+|      |   ├─message
+|      |   |    ├─message.js
+|      |   |    ├─message.json
+|      |   |    ├─message.wxml
+|      |   |    ├─message.wxss
+|      |   |    ├─components
+|      |   |    |     ├─carditem
+|      |   |    |     |    ├─card_item.js
+|      |   |    |     |    ├─card_item.json
+|      |   |    |     |    ├─card_item.wxml
+|      |   |    |     |    └card_item.wxss
+|      |   ├─me
+|      |   | ├─me.js
+|      |   | ├─me.json
+|      |   | ├─me.wxml
+|      |   | ├─me.wxss
+|      |   | ├─details
+|      |   | |    ├─mydetails.js
+|      |   | |    ├─mydetails.json
+|      |   | |    ├─mydetails.wxml
+|      |   | |    ├─mydetails.wxss
+|      |   | |    ├─myposters.js
+|      |   | |    ├─myposters.json
+|      |   | |    ├─myposters.wxml
+|      |   | |    └myposters.wxss
+|      |   ├─match
+|      |   |   ├─match.js
+|      |   |   ├─match.json
+|      |   |   ├─match.wxml
+|      |   |   └match.wxss
+|      |   ├─logs
+|      |   |  ├─logs.js
+|      |   |  ├─logs.json
+|      |   |  ├─logs.wxml
+|      |   |  └logs.wxss
+|      |   ├─index
+|      |   |   ├─index.js
+|      |   |   ├─index.json
+|      |   |   ├─index.wxml
+|      |   |   ├─index.wxss
+|      |   |   ├─post.js
+|      |   |   ├─post.json
+|      |   |   ├─post.wxml
+|      |   |   └post.wxss
+|      |   ├─chat
+|      |   |  ├─chat.js
+|      |   |  ├─chat.json
+|      |   |  ├─chat.wxml
+|      |   |  ├─chat.wxss
+|      |   |  ├─room
+|      |   |  |  ├─room.js
+|      |   |  |  ├─room.json
+|      |   |  |  ├─room.wxml
+|      |   |  |  └room.wxss
+|      ├─images
+|      |   ├─badminton.png
+|      |   ├─basketball.png
+|      |   ├─chat.png
+|      |   ├─chatbackground.png
+|      |   ├─chatBig.png
+|      |   ├─cutOff_bad.png
+|      |   ├─cutOff_bas.png
+|      |   ├─cutOff_foo.png
+|      |   ├─cutOff_tab.png
+|      |   ├─delete.png
+|      |   ├─football.png
+|      |   ├─handin.png
+|      |   ├─login.png
+|      |   ├─matchBig.png
+|      |   ├─mebackground.png
+|      |   ├─message.png
+|      |   ├─messageBig.png
+|      |   ├─postBig.png
+|      |   ├─shaking.png
+|      |   ├─tabletennis.png
+|      |   ├─tag0.png
+|      |   ├─tag1.png
+|      |   ├─tag2.png
+|      |   ├─tag3.png
+|      |   ├─target.gif
+|      |   ├─target.png
+|      |   ├─登陆.png
+|      |   └资源 1.png
+|      ├─font
+|      |  ├─fonthangu.wxss
+|      |  └fontlidebiao.wxss
+|      ├─custom-tab-bar
+|      |       ├─index.js
+|      |       ├─index.json
+|      |       ├─index.wxml
+|      |       ├─index.wxss
+|      |       ├─icon
+|      |       |  ├─chat.png
+|      |       |  ├─chat_c.png
+|      |       |  ├─home_c.png
+|      |       |  ├─match.png
+|      |       |  ├─match_c.png
+|      |       |  ├─me.png
+|      |       |  ├─message.png
+|      |       |  ├─message_c.png
+|      |       |  ├─me_c.png
+|      |       |  └tab.gif
+|      ├─components
+|      |     ├─wechat-miniprogram-rate
+|      |     |            ├─index.js
+|      |     |            ├─index.json
+|      |     |            ├─index.wxml
+|      |     |            └index.wxss
+|      |     ├─chatroom
+|      |     |    ├─chatroom.js
+|      |     |    ├─chatroom.json
+|      |     |    ├─chatroom.wxml
+|      |     |    ├─chatroom.wxss
+|      |     |    ├─dots.gif
+|      |     |    └photo.png
+|      |     ├─card
+|      |     |  ├─card.js
+|      |     |  ├─card.json
+|      |     |  ├─card.wxml
+|      |     |  └card.wxss
+├─cloudfunctions
+|       ├─post
+|       |  ├─config.json
+|       |  ├─index.js
+|       |  └package.json
+|       ├─openapi
+|       |    ├─config.json
+|       |    ├─index.js
+|       |    └package.json
+|       ├─login
+|       |   ├─config.json
+|       |   ├─index.js
+|       |   └package.json
+|       ├─getOpenId
+|       |     ├─config.json
+|       |     ├─index.js
+|       |     └package.json
+|       ├─forum
+|       |   ├─config.json
+|       |   ├─index.js
+|       |   └package.json
+|       ├─echo
+|       |  ├─config.json
+|       |  ├─index.js
+|       |  └package.json
+|       ├─callback
+|       |    ├─config.json
+|       |    ├─index.js
+|       |    └package.json

@@ -1,0 +1,56 @@
+/* miniprogram/pages/me/details/mydetails.wxss */
+/* miniprogram/pages/match/match.wxss */
+@import '/font/fonthangu.wxss';
+page {
+  background-image: url(http://121.43.102.217/fontforwx/background.png);
+  /* background-image: image('/images/background.png'); */
+  background-size: 100%;
+}
+
+.container {
+  display: flex;
+}
+
+.matchimage {
+  position: absolute;
+  margin-left: -30%;
+  margin-top: -15%;
+  width: 180rpx;
+  height: 140rpx;
+  transform: rotate(-30deg);
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400rpx;
+  padding: 5%;
+  width: 75%;
+  border: solid;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2.5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+}
+
+text {
+  text-align: center;
+  font-family: '南构钦雕汉古';
+}
+
+
+.handin {
+  display: flex;
+  flex-direction: column;
+}
+
+.handin .handintext {
+  text-align: center;
+  background-color: #19BC19;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 20rpx;
+  padding: 5%;
+  width: 100%;
+}

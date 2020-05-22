@@ -1,0 +1,64 @@
+/**index.wxss**/
+.swipe-card-container {
+  width: 600rpx;
+  height: 900rpx;
+  margin-top: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: true;
+}
+
+page {
+  background-image: url(http://121.43.102.217/fontforwx/background.png);
+  /* background-image: image('/images/background.png'); */
+  background-size: 100%;
+}
+
+.placeholder-0,
+.placeholder-1,
+.placeholder-2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  position: absolute;
+  /* background: #fff; */
+}
+
+.placeholder-0 {
+  transform: translate3d(0, 0, -1); 
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+.placeholder-1 {
+  transform: translate3d(0, 30rpx, -50rpx); 
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+.placeholder-2 {
+  transform: translate3d(0, 60rpx, -100rpx); 
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+.abox{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  position: relative;
+  padding-bottom: 20rpx;
+ }
+ 
+ .tabTrue{
+  color: #19BC19;
+ }
+ .b{
+  background: #19BC19;
+  height: 4rpx;
+  width:64rpx;
+  position: absolute;
+  bottom: 0;
+  transition: all .3s linear;
+  margin-left: 30rpx;
+ }

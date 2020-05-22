@@ -1,0 +1,306 @@
+
+
+
+@import '/font/fonthangu.wxss';
+@import '/font/fontlidebiao.wxss';
+page {
+  background-image: url(http://121.43.102.217/fontforwx/background.png);
+  /* background-image: image('/images/background.png'); */
+  background-size: 100%;
+
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -150rpx;
+}
+
+.unavatar {
+  position: fixed;
+  width: 240rpx;
+  height: 240rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  margin-top: 200rpx;
+
+}
+
+@keyframes flick {
+  0% {
+    opacity: 1;
+
+  }
+
+  25% {
+    opacity: 0.7;
+
+  }
+
+  50% {
+    opacity: 0.3;
+
+  }
+
+  75% {
+    opacity: 0.7;
+
+  }
+
+  100% {
+    opacity: 1.0;
+
+  }
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  text-decoration-line: underline;
+  position: fixed;
+  font-family: 'LiDeBiao-Xing3';
+  margin-top: 240px;
+  animation-name: none;
+  font-size: 120rpx;
+  margin-left: -100rpx;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: flick;
+  animation-timing-function: linear;
+}
+
+.abox{
+  margin-top: -3%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  position: relative;
+  padding-bottom: 20rpx;
+ }
+ 
+ .tabTrue{
+  color:black;
+  font-family: '南构钦雕汉古';
+ }
+ .b{
+  background: #19BC19;
+  height: 10rpx;
+  width:64rpx;
+  position: absolute;
+  bottom: 0;
+  transition: all .3s linear;
+ }
+
+.textbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 180rpx;
+  width: 666rpx;
+  border: solid;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2.5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+}
+
+.textboxunfold {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 180rpx;
+  width: 666rpx;
+  border: dotted;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2.5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+
+}
+
+.textbox .image1 {
+  display: flex;
+  width: 40rpx;
+  height: 36rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+
+}
+
+.textbox .image2 {
+  display: flex;
+  width: 40rpx;
+  height: 36rpx;
+  margin-top: rpx;
+  margin-left: 40rpx;
+}
+
+.textbox .image3 {}
+
+.textInitiator {
+  font-family: '南构钦雕汉古';
+  font-size: 28rpx;
+  width: 580rpx;
+  margin-top: 25rpx
+}
+
+.textPostion {
+  font-family: '南构钦雕汉古';
+  font-size: 28rpx;
+  width: 580rpx;
+  margin-top: rpx;
+}
+.peoplesign{
+  height: 560rpx;
+  width: 580rpx;
+}
+.more{
+  display: inline;
+  flex-direction: row;
+  flex-shrink: none;
+  overflow: hidden;
+ height:135rpx;
+ width: 660rpx;
+
+
+}
+.moreon>image:nth-child(1){
+
+  height: 90rpx;
+  width:90rpx;
+  flex: none;
+  margin-left: 280rpx;
+  animation:moreunfoldleft 0.4s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+
+}
+.moreon>image:nth-child(2){
+
+  height: 113rpx;
+  width:120rpx;
+  flex: none;
+  margin-left:-100rpx;
+  animation:moreunfoldmid 0.4s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+}
+.moreon>image:nth-child(3){
+
+  height: 90rpx;
+  width:90rpx;
+  flex: none;
+  margin-left: -100rpx;
+  animation:moreunfoldright 0.4s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+}
+
+
+@keyframes unfold {
+  0% {
+    height: 240rpx;
+  }
+
+  50% {
+    height: 600rpx;
+  }
+
+  100% {
+    height: 880rpx
+  }
+}
+
+
+@keyframes fold {
+  0% {
+    height: 880rpx;
+  }
+
+  50% {
+    height: 600rpx;
+  }
+
+  100% {
+    height: 240rpx
+  }
+}
+
+@keyframes moreunfoldleft{
+  0%{margin-left: 280rpx;}
+  50%{margin-left:180rpx ;}
+  100%{margin-left: 80rpx;}
+}
+@keyframes moreunfoldmid{
+  0%{margin-left: -100rpx;}
+  50%{margin-left: 0rpx ;}
+  100%{margin-left: 100rpx;}
+}
+@keyframes moreunfoldright{
+  0%{margin-left: -100rpx;}
+  50%{margin-left: 0rpx ;}
+  100%{margin-left: 100rpx;}
+}
+
+.on {
+  animation: unfold 0.6s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.off {
+  animation: fold 0.4s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+
+/* 评论部分 */
+
+.comment{
+  
+  position:fixed;width:660rpx;height:0rpx;
+  flex-shrink: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: solid;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2.5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+  justify-content:center;
+  align-items:center;
+  display: none;
+  margin-top: 100rpx;
+  margin-left: -44%;
+  animation: commentunfold 0.6s ease-in;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  
+}
+@keyframes commentunfold{
+  0%{height: 0rpx;display: flex;}
+  50%{height: 200rpx;}
+  100%{height: 600rpx;}
+}
+

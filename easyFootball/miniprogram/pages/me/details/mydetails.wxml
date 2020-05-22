@@ -1,0 +1,28 @@
+<!--miniprogram/pages/me/details/mydetails.wxml-->
+<!--miniprogram/pages/match/match.wxml-->
+<view class="container">
+	<image class="matchimage" src="/images/matchBig.png"></image>
+	<view wx:if="{{ifOfficial==false}}"></view>
+
+	<view class="intro">
+		<text style="font-weight:bold">  开通官方号</text>
+		<text>您的账号现在还不是学校官方账号</text>
+		<text>学校官方账号可以: </text>
+		<text>发布校级比赛消息</text>
+		<text>使用小程序提供的模板完成比赛复盘</text>
+		<text>管理校级比赛信息</text>
+		<text>如果你是学校足协的负责人</text>
+		<text>欢迎注册官方号 (✪ω✪)</text>
+	</view>
+  <view style="height:60rpx"></view>
+	<view class="handin">
+		<view  class="handintext" bindtap="post">
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;">我已经是官方号\n我要登陆</text>
+		</view>
+      <view style="height:30rpx"></view>
+			<image src="/images/matchBig.png" style=" position: absolute; margin-left: 36%; margin-top: -13%; width: 140rpx; height: 100rpx; transform: rotate(30deg);"></image>
+		<view class="handintext"  bindtap="post">
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;">我还不是官方号\n我要注册</text>
+		</view>
+	</view>
+</view>

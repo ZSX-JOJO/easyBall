@@ -1,0 +1,49 @@
+@import '/font/fonthangu.wxss';
+@import '/font/fontlidebiao.wxss';
+.id-text {
+  font-size: 48rpx;
+}
+
+.name-text {
+  font-size: 64rpx;
+}
+
+.mp-swipe-card-item {
+ 
+  background-color: #f3fcf1;
+  /* background-image: image('/images/background.png'); */
+  background-size: 95%;
+  height: 100%;
+  width: 100%;
+  padding: 3%;
+  /* background: linear-gradient(to right bottom, red, orange, green, purple); */
+  border: solid;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+}
+.intro{
+  font-family: '南构钦雕汉古';
+  display: flex;
+  padding:4%;
+  flex-direction: row;
+  line-height:21rpx;
+}
+.activity{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: unset;
+ 
+}
+.judge{
+  border: solid;
+  margin-left: 100rpx;
+  width: 40%;
+  padding: 6%;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2rpx;
+  box-shadow: #666 0px 0px 3px;
+  border-radius: 30rpx;
+}

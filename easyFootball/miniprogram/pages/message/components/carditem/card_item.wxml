@@ -1,0 +1,41 @@
+
+	<view class="mp-swipe-card-item" style=" background-image: url(http://121.43.102.217/fontforwx/{{itemData.project}}background.png);">
+
+		<view>
+			<text class="intro">
+  这里需要您为您\n
+	之前参加过的活动打分\n
+  您的打分结果，\n
+  将会作为活动发起人信用等级的\n 
+  一个重要参考，\n
+  而您的打分的真实度，\n
+  也会作为我们评价您信用的参考，\n
+  希望您能够公正公平的做出您的打分\n
+  </text>
+		</view>
+		<view class="activity">
+			<image class="image1" src="/images/tag1.png" style="width:48rpx;height:50rpx;flex:10%"></image>
+			<view style="flex:5%"></view>
+			<text style="font-family:'南构钦雕汉古' ;flex:85%">发起人:{{itemData.name}} </text>
+			<!-- 地点 -->
+			<image class="image2" src="/images/tag1.png" style="width:48rpx;height:50rpx;flex:10%"></image>
+			<view style="flex:5%"></view>
+			<text style="font-family:'南构钦雕汉古';flex:85%"> 地点:{{itemData.position}}</text>
+			<!-- 备注 -->
+			<image src="/images/tag1.png" style="width:48rpx;height:50rpx;flex:10%"></image>
+			<view style="flex:5%"></view>
+			<text style="font-family:'南构钦雕汉古';flex:85%"> 项目:{{converse[itemData.project]}}</text>
+		</view>
+		<view style="height:20rpx;width:100%"></view>
+		<view class="judge">
+			<image src="/images/tag1.png" style="width:48rpx;height:50rpx;flex:10%"></image>
+			<text style="width:30%; text-align: center;font-family:'南构钦雕汉古'">评分</text>
+			<view style="width:30%"></view>
+			<rate placeholder="3.5" bindchange="showResult"></rate>
+		</view>
+		<view style="background-color:#19BC19;width:100rpx;height:50rpx;border-radius:20rpx;position:absolute;margin-left:50%; box-shadow: #666 0px 0px 3px;" bindtap="post">
+
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:10rpx">提交</text>
+		</view>
+
+	</view>
