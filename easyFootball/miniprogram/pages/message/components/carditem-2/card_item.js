@@ -21,7 +21,21 @@ Component({
       basketball:'篮球',
       badminton:'羽毛球'
 
-    }
+    },
+    changeInfo:[{
+      name:'。',
+      position:'四川大学',
+      time:'2020-6-1'
+    }],
+  },
+  load:function(){
+    wx.cloud.callFunction({
+      name:'changeInf',
+      success:function(res){
+        console.log(res)
+      }
+    })
+    
   },
   attached:function(){
     console.log(this.data.type)

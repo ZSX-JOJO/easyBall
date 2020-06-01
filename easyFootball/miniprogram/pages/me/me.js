@@ -117,6 +117,16 @@ Page({
     wx.navigateTo({
       url: 'details/myposters',
     })
+  },
+  mySign:function(){
+    wx.navigateTo({
+      url: 'details/mysign',
+    })
+  },
+  myFriends:function(){
+    wx.navigateTo({
+      url: `details/myFriends?openId=${app.globalData.openId}`,
+    })
   }
 
 

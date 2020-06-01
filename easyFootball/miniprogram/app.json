@@ -11,7 +11,10 @@
     "components/card/card",
     "pages/me/details/myposters",
     "pages/index/post",
-    "pages/me/details/mydetails"
+    "pages/me/details/mydetails",
+    "pages/me/details/mysign",
+    "pages/index/userInf",
+    "pages/me/details/myFriends"
   ],
   "window": {
     "backgroundTextStyle": "dark",

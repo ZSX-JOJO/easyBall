@@ -1,0 +1,11 @@
+<view class="textbox">
+	<image src="{{userInf.url}}"></image>
+	<text>用户名：{{userInf.name}}</text>
+	<text>擅长：足球</text>
+	<text>信誉：良</text>
+</view>
+<view style="background-color:#19BC19;width:200rpx;height:50rpx;border-radius:20rpx;position:absolute;box-shadow: #666 0px 0px 10px;margin-left:320rpx" bindtap="addFriends">
+
+	<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:40rpx">加为好友</text>
+
+</view>

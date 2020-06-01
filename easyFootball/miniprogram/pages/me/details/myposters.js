@@ -36,8 +36,57 @@ Page({
         console.log(that.data.myposters)
       }
     })
+   
   },
-
+  tap(){
+    wx.showToast({
+      title: '长按删除帖子',
+      icon: 'none',
+      duration: 1000,
+      mask:true
+  })
+  },
+  longtap(e){
+    
+  var that=this
+  var i=e.currentTarget.id
+  console.log (i)
+  wx.cloud.callFunction({
+    name:'delete',
+    data:{
+      _id:that.data.myposters[i]._id,
+      poster:that.data.myposters[i].postername,
+      project:that.data.myposters[i].project,
+      tip:that.data.myposters[i].tips,
+      position:that.data.myposters[i].position,
+      time:`${that.data.myposters[i].year}年 ${that.data.myposters[i].month}月 ${that.data.myposters[i].day}日 ${that.data.myposters[i].hour}时 ${that.data.myposters[i].minute}`
+    },
+    success(res){
+      wx.cloud.callFunction({
+        name:'forum',
+        data:{
+          type:'myPosters',
+          openId:app.globalData.openId
+        },
+        success:function(res){
+          that.setData({
+            posterscnt:res.result.length,
+            myposters:res.result
+          })
+          console.log(that.data.myposters)
+        }
+      })
+     
+      wx.showToast({
+        title: '删除成功！',
+        icon: 'success',
+        duration: 1000,
+        mask:true
+    })
+    }
+  })
+  console.log(e)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -85,5 +134,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  
 })

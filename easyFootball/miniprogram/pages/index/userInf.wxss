@@ -1,0 +1,37 @@
+page {
+  background-image: url(http://121.43.102.217/fontforwx/background.png);
+  /* background-image: image('/images/background.png'); */
+  background-size: 100%;
+
+}
+
+.textbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding:50rpx 10rpx 20rpx 20rpx;
+  height: 300rpx;
+  width: 360rpx;
+  border: solid;
+  border-color: rgb(85, 190, 23);
+  border-width: 8rpx 0rpx 0rpx 2.5rpx;
+  box-shadow: #666 0px 0px 10px;
+  border-radius: 30rpx;
+  margin-left: 21%;
+  margin-top: 42%;
+}
+
+.textbox text{
+  padding:5rpx;
+  font-size: 45rpx;
+  font-family: '南构钦雕汉古';
+}
+.textbox image{
+  width:120rpx;
+  height: 120rpx;
+  margin-top: -65rpx;
+  margin-left: -30rpx;
+  border-radius: 50%;
+}
+
+

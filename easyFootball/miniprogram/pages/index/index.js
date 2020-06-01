@@ -1,5 +1,3 @@
-
-
 //index.js
 //获取应用实例
 const app = getApp()
@@ -33,6 +31,21 @@ Page({
       position: '',
       tips: '',
     },
+    names:[],
+    forum_match:[{
+      school:'电子科技大学',
+      position:'电子科技大学体育馆',
+      time:'2020-6-1：14:30',
+      project:'basketball',
+      tips:"电子科技大学男子篮球代表队是中国高校一支具有光荣历史传统及辉煌战绩的队伍，曾取得CUBA全国冠军、亚军；全国大运会篮球比赛第八名；两次获得CUBS八强。蝉联近三十年四川省高校篮球联赛冠军。现我校男篮正处于新老交替时期，队中刚进校的队员达到六人，全队平均身高1.96米。篮球队正积极训练，全力备战。力争在CUBA赛场上赛出风格、赛出水平。"
+    },
+    {
+      school:'四川大学',
+      position:'四川大学一号场',
+      time:'2020-6-1：14:30',
+      project:'football',
+      tips:'四川大学篮子足球队是中国高校一支具有光荣历史传统及辉煌战绩的队伍，曾取得CUBA全国冠军、亚军；全国大运会篮球比赛第八名；两次获得CUBS八强。蝉联近三十年四川省高校篮球联赛冠军。现我校男篮正处于新老交替时期，队中刚进校的队员达到六人，全队平均身高1.96米。篮球队正积极训练，全力备战。力争在CUBA赛场上赛出风格、赛出水平。'
+    }],
     title: ["约球","比赛"],
   currentIndex:"0",
   left:""
@@ -117,6 +130,7 @@ onPullDownRefresh: async function () {
         selected: 2
       })
     }
+    
   },
   onReady: function () {
       
@@ -154,9 +168,10 @@ onPullDownRefresh: async function () {
       success:(res)=>{
         
         this.setData({
-          forum:res.result
+          forum:res.result.reverse()
         })
       }
+      
     })
     
   },
@@ -178,7 +193,8 @@ onPullDownRefresh: async function () {
   fold: function (e) {
     this.setData({
       fold: true,
-      morefold: true
+      morefold: true,
+      names:[]
     })
   },
   unfold: function (e) {
@@ -186,6 +202,22 @@ onPullDownRefresh: async function () {
     this.setData({
       fold: false,
       i:e.currentTarget.id
+    })
+
+    var index=e.currentTarget.id
+    console.log(index)
+    var that=this
+    wx.cloud.callFunction({
+      name:'sign',
+      data:{
+        type:'getInf',
+        id:that.data.forum[index]._id
+      },
+      success:(res)=>{
+        that.setData({
+          names: res.result.data
+        })
+      }
     })
   },
   morefold: function (e) {
@@ -291,6 +323,55 @@ onPullDownRefresh: async function () {
         url: `./post`,
       })
     }
+   
+  },
+  toChatRoom(){
+    wx.showToast({
+      title: '请填写完整',
+      icon: 'none'
+    })
+  },
+  baoMing(event){
+    var index=event.currentTarget.id
+    var that=this
+    wx.cloud.callFunction({
+      name:'sign',
+      data:{
+        type:'sign',
+        openId:that.data.openId,
+        id:that.data.forum[index]._id,
+        name:that.data.userInfo.nickName,
+        avatarUrl:that.data.userInfo.avatarUrl
+      },
+      success:(res)=>{
+        console.log(res)
+        wx.showToast({
+          title: '报名成功！',
+          icon: 'success'
+        })
+        wx.cloud.callFunction({
+          name:'sign',
+          data:{
+            type:'getInf',
+            id:that.data.forum[index]._id
+          },
+          success:(res)=>{
+            that.setData({
+              names: res.result.data
+            })
+          }
+        })
+      }
+    })
+    console.log(event)
+  
+  },
+  showUserInf(event){
+    var index=event.currentTarget.id
+    var that=this
+    wx.navigateTo({
+      url: `./userInf?openId=${that.data.names[index].openId}&name=${that.data.names[index].name}&url=${that.data.names[index].avatarUrl}`,
+    })
    
   }
 })

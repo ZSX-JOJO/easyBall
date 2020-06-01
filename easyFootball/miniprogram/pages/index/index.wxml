@@ -11,10 +11,10 @@
 			</view>
 			<view style="height:15rpx;width:100%"></view>
 			<view wx:if="{{yueqiu==true}}">
-				<image src="/images/handin.png" style="position:fixed;margin-top:1030rpx;margin-left:73%;width:120rpx;height:144rpx" bindtap="commentunfold"></image>
+				<image src="/images/handin.png" style="position:fixed;bottom:144rpx;right:60rpx;margin-left:73%;width:120rpx;height:144rpx" bindtap="commentunfold"></image>
 				<view wx:for="{{forum}}">
 
-					<view wx:if="{{fold==1}}" class="textbox off" bindtap="unfold" style="display:{{tiezidispaly}}" id="{{index}}">
+					<view wx:if="{{fold==1}}" class="{{forum[index].postername==userInfo.nickName?'textbox off me':'textbox off'}}" bindtap="unfold" style="display:{{tiezidispaly}}" id="{{index}}">
 						<image src="/images/{{forum[index].project}}.png" style="position:absolute;width:80rpx;height:80rpx;margin-left:560rpx;margin-top:-40rpx"></image>
 						<!-- 发起人 -->
 						<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx"></image>
@@ -36,75 +36,82 @@
 				<view wx:if="{{fold==1}}" class="comment" style="{{commentdisplay}}">
 
 					<!-- 选择球类 -->
-					<view style="width:20rpx"></view>
-					<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
-					<view style="width:10rpx"></view>
-					<radio-group>
-						<radio value="足球" bindtap="projectfoot"><text style="font-family:'南构钦雕汉古'" >足球</text></radio>
-						<radio value="篮球" bindtap="projectbas"><text style="font-family:'南构钦雕汉古'">篮球</text></radio>
-						<radio value="羽毛球" bindtap="projectbad"><text style="font-family:'南构钦雕汉古'">羽毛球</text></radio>
-						<radio value="乒乓球" bindtap="projecttab"><text style="font-family:'南构钦雕汉古'">乒乓球</text></radio>
-					</radio-group>
+					<view style="display:flex;flex:1 1 auto;flex-direction: row;">
+						<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
+						<view style="width:10rpx"></view>
+						<radio-group>
+							<radio value="足球" bindtap="projectfoot"><text style="font-family:'南构钦雕汉古'" >足球</text></radio>
+							<radio value="篮球" bindtap="projectbas"><text style="font-family:'南构钦雕汉古'">篮球</text></radio>
+							<radio value="羽毛球" bindtap="projectbad"><text style="font-family:'南构钦雕汉古'">羽毛球</text></radio>
+							<radio value="乒乓球" bindtap="projecttab"><text style="font-family:'南构钦雕汉古'">乒乓球</text></radio>
+						</radio-group>
+					</view>
+
 
 					<!-- 选择日期 -->
-					<view style="width:20rpx"></view>
-					<!-- 年 -->
-					<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
-					<view style="width:10rpx"></view>
-					<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:120rpx" value="" bindinput="inputyear" maxlength='4'></input>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">年</text>
+					<view style="display:flex;flex:1 1 auto;flex-direction:row;">
+				
+						<!-- 年 -->
+						<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
+					
+						<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:120rpx" value="" bindinput="inputyear" maxlength='4'></input>
+						<view style="width:10rpx"></view>
+						<text style="font-family:'南构钦雕汉古'">年</text>
 
-					<!-- 月 -->
-					<view style="width:10rpx"></view>
-					<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" value="" maxlength='2' bindinput="inputmonth"></input>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">月</text>
+						<!-- 月 -->
 
-
-					<!-- 日 -->
-					<view style="width:10rpx"></view>
-					<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputday" value="" maxlength='2'></input>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">日 </text>
+						<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" value="" maxlength='2' bindinput="inputmonth"></input>
+					
+						<text style="font-family:'南构钦雕汉古'">月</text>
 
 
-					<!-- 时 -->
-					<view style="width:10rpx"></view>
-					<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputhour" value="" maxlength='2'></input>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">时 </text>
+						<!-- 日 -->
+					
+						<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputday" value="" maxlength='2'></input>
+					
+						<text style="font-family:'南构钦雕汉古'">日 </text>
 
-					<!-- 分 -->
-					<view style="width:10rpx"></view>
-					<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputminute" value="" maxlength='2'></input>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">分 </text>
 
-					<view style="width:20rpx"></view>
+						<!-- 时 -->
+						<view style="width:10rpx"></view>
+						<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputhour" value="" maxlength='2'></input>
+						
+						<text style="font-family:'南构钦雕汉古'">时 </text>
 
+						<!-- 分 -->
+						
+						<input type="number" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:45rpx" bindinput="inputminute" value="" maxlength='2'></input>
+						
+						<text style="font-family:'南构钦雕汉古'">分 </text>
+
+						
+					</view>
 
 					<!-- 地点 -->
+						<view style="display:flex;flex:1 1 auto;flex-direction:row;">
 					<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">地点</text>
-					<view style="width:10rpx"></view>
-					<input type="text" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:500rpx" value="" placeholder="" maxlength='14' bindinput='inputposition'></input>
-					<!-- 备注 -->
-					<view style="width:20rpx"></view>
-					<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
-					<view style="width:10rpx"></view>
-					<text style="font-family:'南构钦雕汉古'">备注</text>
-					<view style="width:10rpx"></view>
-					<textarea type="text" style="selection-start:2; border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;;height:200rpx;width:460rpx;;padding:20rpx" value="" maxlength='60' bindinput="inputtips"></textarea>
-					<!-- 提交 -->
 					
-						<view style="background-color:#19BC19;width:200rpx;height:50rpx;border-radius:20rpx;position:absolute;margin-top:330rpx;margin-left:150rpx; box-shadow: #666 0px 0px 10px;" bindtap="post">
-						
-							<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:70rpx">提交</text>
-							
-						</view>
+					<text style="font-family:'南构钦雕汉古';padding:0rpx 10rpx 0rpx 10rpx;">地点</text>
 				
+					<input type="text" style="border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;text-align:center;width:500rpx" value="" placeholder="" maxlength='14' bindinput='inputposition'></input>
+					</view>
+					<!-- 备注 -->
+					<view style="display:flex;flex:1 1 auto;flex-direction:row;">
+					
+					<image src="../../images/tag0.png" style="height:40rpx;width:45rpx;flex-shrink:none"></image>
+					
+					<text style="font-family:'南构钦雕汉古';padding:0rpx 10rpx 0rpx 10rpx;">备注</text>
+				
+					<textarea type="text" style="selection-start:2; border: solid;border-color: rgb(85, 190, 23); border-width: 0rpx 0rpx 0rpx 2.5rpx; box-shadow: #666 0px 0px 2px; border-radius: 10rpx;;height:200rpx;width:460rpx;;padding:20rpx" value="" maxlength='60' bindinput="inputtips"></textarea>
+					</view>
+					<!-- 提交 -->
+
+					<view style="background-color:#19BC19;width:200rpx;height:50rpx;border-radius:20rpx;position:absolute;margin-top:330rpx;margin-left:150rpx; box-shadow: #666 0px 0px 10px;" bindtap="post">
+
+						<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:70rpx">提交</text>
+
+					</view>
+
 
 					<!-- 返回 -->
 					<view bindtap="commentfold" style="position:fixed;margin-top:600rpx;width:660rpx;height:400rpx"></view>
@@ -117,8 +124,9 @@
 
 				<!-- 点击之后 -->
 				<view wx:else>
+
 					<!-- 概述部分 -->
-					<view class="textbox" bindtap="fold">
+					<view class="textbox" id="{{i}}">
 						<image src="/images/{{forum[i].project}}.png" style="position:absolute;width:80rpx;height:80rpx;margin-left:560rpx;margin-top:-40rpx"></image>
 						<!-- 发起人 -->
 						<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx"></image>
@@ -133,37 +141,64 @@
 					<image src="/images/cutOff_bas.png" style="width:40rpx;height:75rpx;margin-left:260rpx;"></image>
 					<image src="/images/cutOff_bas.png" style="width:40rpx;height:75rpx;"></image>
 					<image src="/images/cutOff_bas.png" style="width:40rpx;height:75rpx;"></image>
-
+					<view class="textBoxTitle">
+						<image src="/images/community_big.png" bindtap="fold"></image>
+						<view><text>已经报名人员</text></view>
+					</view>
 					<view class="textboxunfold on">
-						<view class="peoplesign" bindtap="fold">
+						<view class="peoplesign">
+							<view wx:for="{{names}}">
+								<view class="nameButton" bindtap="showUserInf" id="{{index}}">
+									<image src="/images/name.png" style="width:40rpx;height:60rpx;flex-shrink:0"></image>
+									<view style="margin-left:10rpx">{{names[index].name}}</view>
+								</view>
+							</view>
+
 						</view>
-						<view wx:if="{{morefold==1}}" class="more" bindtap="morefold">
+						<!-- <view wx:if="{{morefold==1}}" class="more" bindtap="morefold">
 							<image src="/images/target.gif" style="width:120rpx;height:110rpx; margin-left:280rpx;"></image>
 						</view>
 						<view wx:else class="more moreon" bindtap="morefold">
 							<image src="/images/chat.png"></image>
 							<image src="/images/target.png"></image>
 							<image src="/images/shaking.png"></image>
+							
 
+						</view> -->
+						<view class="more">
+							<button bindtap="toChatRoom" id="{{i}}">
+								<image src="/images/聊天.png" style="width:56rpx;height:56rpx;"></image>
+								<text>聊天室</text>
+							</button>
+							<button bindtap="baoMing" id="{{i}}">
+								<image src="/images/报名.png" style="width:48rpx;height:56rpx;"></image>
+								<text>报名</text>
+							</button>
 						</view>
 					</view>
 				</view>
 			</view>
-			<view wx:else>
-				<image src="/images/handin.png" style="position:fixed;margin-top:1050rpx;margin-left:73%;width:120rpx;height:144rpx" bindtap="commentunfold"></image>
-				<view wx:for="{{forum}}">
 
-					<view wx:if="{{fold==1}}" class="textbox off" bindtap="unfold" style="display:{{tiezidispaly}}" id="{{index}}">
-						<image src="/images/{{forum[index].project}}.png" style="position:absolute;width:80rpx;height:80rpx;margin-left:560rpx;margin-top:-40rpx"></image>
+
+
+
+			<!-- 比赛部分 -->
+			<view wx:else>
+
+				<view wx:for="{{forum_match}}">
+
+					<view wx:if="{{fold==1}}" class="matchbox offmatchbox " style="display:{{tiezidispaly}}" id="{{index}}">
+						<image src="/images/{{forum_match[index].project}}.png" style="position:absolute;width:80rpx;height:80rpx;margin-left:560rpx;margin-top:-40rpx"></image>
 						<!-- 发起人 -->
-						<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx"></image>
-						<text class="textInitiator">发起人:{{forum[index].postername}} </text>
+						<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx;margin-top:16rpx"></image>
+						<text class="textInitiator" style="margin-left:30rpx">学校:{{forum_match[index].school}} </text>
 						<!-- 地点 -->
 						<image class="image2" src="/images/tag1.png" style="width:40rpx;height:40rpx"></image>
-						<text class="textPostion"> 地点:{{forum[index].position}}</text>
+						<text class="textPostion" style="margin-left:30rpx"> 地点:{{forum_match[index].position}}</text>
 						<!-- 备注 -->
-						<image src="/images/tag2.png" style="width:40rpx;height:40rpx;margin-left: 40rpx;"></image>
-						<text class="textPostion"> 备注:{{forum[index].tips}}</text>
+						<image src="/images/tag2.png" style="width:40rpx;height:40rpx;margin-left: 8rpx;"></image>
+						<text class="textPostion" style="margin-left:20rpx" > 时间:{{forum_match[index].time}}</text>
+						<text style="padding:0 20rpx 0 30rpx">介绍：{{forum_match[index].tips}}</text>
 					</view>
 				</view>
 

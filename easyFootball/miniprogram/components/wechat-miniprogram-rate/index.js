@@ -121,6 +121,7 @@ Component({
       this.triggerEvent('change', {
         value
       })
+      
     }
   }
 })

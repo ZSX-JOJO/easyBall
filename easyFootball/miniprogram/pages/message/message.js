@@ -32,6 +32,8 @@ Page({
       generateItem(),
       generateItem()
     ],
+    pushList_change:[],
+ 
     converse: {
       tabletennis: '乒乓球',
       football: '足球',
@@ -39,7 +41,7 @@ Page({
       badminton: '羽毛球'
 
     },
-    title: ["系统通知", "打分通知"],
+    title: ["打分通知", "系统通知"],
     currentIndex: "0",
     left: "",
     type: 'grade'
@@ -84,6 +86,19 @@ Page({
         selected: 1
       })
     }
+    var that=this
+    wx.cloud.callFunction({
+      name:'changeInf',
+      data:{
+        openId: app.globalData.openId
+      },
+      success:(res)=>{
+        console.log(res)
+        that.setData({
+          pushList_change:res.data
+        })
+      }
+    })
   },
   handleSwipeOut(...args) {
    
@@ -103,6 +118,18 @@ Page({
   },
   getUserInfo: function (e) {
 
+  },
+
+  onPullDownRefresh: async function () {
+    wx.cloud.callFunction({
+      name:'changeInf',
+      data:{
+        openId: app.globalData.openId
+      },
+      success:(res)=>{
+        console.log(res)
+      }
+    })
   },
 
 })

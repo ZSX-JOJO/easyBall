@@ -35,7 +35,7 @@
 		</view>
 		<view style="background-color:#19BC19;width:100rpx;height:50rpx;border-radius:20rpx;position:absolute;margin-left:50%; box-shadow: #666 0px 0px 3px;" bindtap="post">
 
-			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:10rpx">提交</text>
+			<text style="font-family:'南构钦雕汉古';color:#ffffff;text-align:center;margin-left:10rpx" >提交</text>
 		</view>
 
 	</view>

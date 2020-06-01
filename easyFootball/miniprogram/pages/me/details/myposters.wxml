@@ -9,7 +9,7 @@
 		<view wx:else>
 			<view wx:for="{{myposters}}">
 
-				<view class="textbox off" style="display:flex">
+				<view class="textbox off" style="display:flex" bindtap="tap"  bindlongpress="longtap" id="{{index}}">
 					<image src="/images/{{myposters[index].project}}.png" style="position:absolute;width:80rpx;height:80rpx;margin-left:560rpx;margin-top:-40rpx"></image>
 					<!-- 发起人 -->
 					<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx"></image>
@@ -20,7 +20,6 @@
 					<!-- 备注 -->
 					<image src="/images/tag2.png" style="width:40rpx;height:40rpx;margin-left: 40rpx;"></image>
 					<text class="textPostion"> 时间:{{myposters[index].year}} - {{myposters[index].month}} - {{myposters[index].day}}</text>
-					<image src="/images/delete.png" style="position:absolute;width:164rpx;height:135rpx;margin-left:60%;margin-top:8%"></image>
 				</view>
 			</view>
 		</view>

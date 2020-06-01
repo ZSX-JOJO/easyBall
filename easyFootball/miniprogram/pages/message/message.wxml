@@ -23,10 +23,10 @@
 <view class="container">
 		<image src="/images/messageBig.png" style="overflow: visible;position: fixed; margin-left: -24%; margin-top: -15%; width: 144rpx; height: 140rpx; transform: rotate(-20deg);"></image>
 		<view class="swipe-card-container">
-			<!-- <view class="placeholder-0"></view>
+			<view class="placeholder-0"></view>
 			<view class="placeholder-1"></view>
-			<view class="placeholder-2"></view> -->
-			<mp-swipe-card bind:click="handleClickCard" push-list="{{pushList}}" bind:swipeout="handleSwipeOut" generic:mp-swipe-card-item="card-item" type="grade">
+			<view class="placeholder-2"></view>
+			<mp-swipe-card bind:click="handleClickCard" push-list="{{pushList_change}}" bind:swipeout="handleSwipeOut" generic:mp-swipe-card-item="card-item-2" type="grade">
 				<view>{{item}}</view>
 			</mp-swipe-card>
 		</view>

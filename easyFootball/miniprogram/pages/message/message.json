@@ -2,6 +2,7 @@
   "usingComponents": {
     "mp-swipe-card": "../../components/card/card",
     "card-item": "./components/carditem/card_item",
+    "card-item-2": "./components/carditem-2/card_item",
     "rate": "../../components/wechat-miniprogram-rate"
   }
 }

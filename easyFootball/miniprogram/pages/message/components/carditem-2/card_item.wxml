@@ -1,0 +1,20 @@
+<view class="mp-swipe-card-item" style=" background-image: url(http://121.43.102.217/fontforwx/{{itemData.project}}background.png);">
+
+	<view>
+		<text class="intro" wx:if="{{changeInfo.length==0}}">
+  这里是系统通知\n
+	您报名的项目有任何变动\n
+	我们会在这里告知您\n
+	此时暂无通知
+  </text>
+		<view wx:else>
+			<text class="intro" >
+  您报名的活动删除了！
+  </text>
+			<text class="intro2" >发起人:{{itemData.name}}\n</text>
+			<text class="intro2" >地点:{{itemData.position}}\n</text>
+			<text class="intro2" >时间：{{changeInfo.time}}\n</text>
+		
+		</view>
+	</view>
+</view>

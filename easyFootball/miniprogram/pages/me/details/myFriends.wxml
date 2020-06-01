@@ -1,0 +1,27 @@
+<view wx:if="{{myFriends.length==0}}">
+
+	<view class="textbox_none">
+    <text>您还没有添加过好友呢</text>
+    <text>进入社区找到你的好友吧</text>
+    <image src="/images/dance.png"></image>
+	</view>
+</view>
+<view wx:else style="padding-top:80rpx">
+	<view wx:for="{{myFriends}}">
+		<view class="textbox off" style="display:flex" bindtap="tap" bindlongpress="longtap" id="{{index}}">
+
+			<view>
+				<image class="image1" src="/images/tag0.png" style="width:40rpx;height:36rpx"></image>
+				<text >用户名:{{myFriends[index].myFriendName}} </text>
+			</view>
+
+
+			<view>
+				<image class="image2" src="/images/tag1.png" style="width:40rpx;height:40rpx"></image>
+				<text > 信誉：良好</text>
+			</view>
+
+			<image src="/images/dance.png"></image>
+		</view>
+	</view>
+</view>
